@@ -10,3 +10,5 @@ $this->requirejs()->append(array('bower_components/redactor-counter/redactor-cou
     redactorCounter.init('.redactor');
 }");
 ```
+
+Word counter from https://github.com/RadLikeWhoa/Countable
