@@ -1,0 +1,26 @@
+{
+  "name": "redactor-counter",
+  "version": "0.0.1",
+  "authors": [
+    "Jurre Antonisse <jurre@soflomo.com>"
+  ],
+  "description": "Word and Character counter for Redactor editor",
+  "main": "redactor-counter.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "Redactor",
+    "Word counter",
+    "Character counter",
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Soflomo/redactor-counter",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
