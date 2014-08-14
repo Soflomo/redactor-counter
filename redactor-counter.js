@@ -1,8 +1,11 @@
 define(function () {
 
-    var create = function(textField) {
+    var create = function(element) {
+        var container = element.parentNode;
+        var textField = container.querySelectorAll('.redactor_editor')[0]
+
         addListener(textField);
-        textField.parentNode.insertAdjacentHTML('beforeend', '<div class="redactor-counter">Characters: <span class="redactor-counter__characters">'+countCharacters(textField)+'</span> Words: <span class="redactor-counter__words">'+countWords(textField)+'</span></div>');
+        container.insertAdjacentHTML('beforeend', '<div class="redactor-counter">Characters: <span class="redactor-counter__characters">'+countCharacters(textField)+'</span> Words: <span class="redactor-counter__words">'+countWords(textField)+'</span></div>');
     }
 
     var addListener = function(textField) {
@@ -12,7 +15,7 @@ define(function () {
         textField.addEventListener('paste',          update, false);
     }
 
-    var update = function(element) {
+    var update = function() {
         var characterElement = this.parentNode.querySelectorAll('.redactor-counter .redactor-counter__characters')[0];
         var wordElement      = this.parentNode.querySelectorAll('.redactor-counter .redactor-counter__words')[0];
         characterElement.textContent = countCharacters(this);
