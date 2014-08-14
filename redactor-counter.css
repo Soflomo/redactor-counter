@@ -1,0 +1,9 @@
+.redactor-counter {
+    margin-bottom: 1em;
+}
+
+.redactor-counter__words,
+.redactor-counter__characters {
+    width: 100px;
+    font-weight: bold;
+}
