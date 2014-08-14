@@ -1,0 +1,14 @@
+{
+  "name": "redactor-counter",
+  "version": "0.0.1",
+  "dependencies": {
+    "gulp": "~3.8.0",
+    "gulp-uglify": "~0.3.1",
+    "gulp-filter": "^1.0.0",
+    "gulp-rename": "^1.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:soflomo/redactor-counter.git#0.0.1"
+  }
+}
