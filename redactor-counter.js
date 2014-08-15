@@ -4,22 +4,24 @@ define(function () {
         var container = element.parentNode;
         var textField = container.querySelector('.redactor_editor');
 
-        addListener(textField);
         container.insertAdjacentHTML('beforeend', '<div class="redactor-counter">Characters: <span class="redactor-counter__characters">'+countCharacters(textField)+'</span> Words: <span class="redactor-counter__words">'+countWords(textField)+'</span></div>');
+
+        var characterElement = container.querySelector('.redactor-counter .redactor-counter__characters');
+        var wordElement      = container.querySelector('.redactor-counter .redactor-counter__words');
+
+        addListener(textField, characterElement, wordElement);
     }
 
-    var addListener = function(textField) {
-        textField.addEventListener('keyup',          update, false);
-        textField.addEventListener('propertychange', update, false);
-        textField.addEventListener('input',          update, false);
-        textField.addEventListener('paste',          update, false);
+    var addListener = function(textField, characterElement, wordElement) {
+        textField.addEventListener('keyup',          function(){ update(textField, characterElement, wordElement) });
+        textField.addEventListener('propertychange', function(){ update(textField, characterElement, wordElement) });
+        textField.addEventListener('input',          function(){ update(textField, characterElement, wordElement) });
+        textField.addEventListener('paste',          function(){ update(textField, characterElement, wordElement) });
     }
 
-    var update = function() {
-        var characterElement = this.parentNode.querySelector('.redactor-counter .redactor-counter__characters');
-        var wordElement      = this.parentNode.querySelector('.redactor-counter .redactor-counter__words');
-        characterElement.textContent = countCharacters(this);
-        wordElement.textContent      = countWords(this);
+    var update = function(textField, characterElement, wordElement) {
+        characterElement.textContent = countCharacters(textField);
+        wordElement.textContent      = countWords(textField);
     }
 
     var countCharacters = function(textField) {
