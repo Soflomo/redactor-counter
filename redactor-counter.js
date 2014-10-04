@@ -2,7 +2,7 @@ define(function () {
 
     var create = function(element) {
         var container = element.parentNode;
-        var textField = container.querySelector('.redactor_editor');
+        var textField = container.querySelector('.redactor-editor');
 
         container.insertAdjacentHTML('beforeend', '<div class="redactor-counter">Characters: <span class="redactor-counter__characters">'+countCharacters(textField)+'</span> Words: <span class="redactor-counter__words">'+countWords(textField)+'</span></div>');
 
